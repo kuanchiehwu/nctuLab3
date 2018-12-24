@@ -30,6 +30,11 @@ In this lab, we are going to write a Python program with Ryu SDN framework to bu
 > * Describe how you finish this work in detail
 
 1. Environment Setup
+   1) 加入GitHub Classroom，拿到Lab2的資料
+   2) 用SSH指令進入資料夾(For MacOS)  
+      `ssh -p 16206 root@140.13.195.69`  
+      password:cn2018
+   3) 用clone指令
 
 2. Example of Ryu SDN
 
