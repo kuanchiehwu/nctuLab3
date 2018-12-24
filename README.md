@@ -69,6 +69,8 @@ In this lab, we are going to write a Python program with Ryu SDN framework to bu
 > TODO: 
 > * Please add your references in the following
 
+* **Reference**
+    * [OpenFlow 通訊協定 - Ryubook 1.0 說明文件](https://osrg.github.io/ryu-book/zh_tw/html/openflow_protocol.html)
 * **Ryu SDN**
     * [Ryubook Documentation](https://osrg.github.io/ryu-book/en/html/)
     * [Ryubook [PDF]](https://osrg.github.io/ryu-book/en/Ryubook.pdf)
