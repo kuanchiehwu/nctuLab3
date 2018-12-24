@@ -34,7 +34,14 @@ In this lab, we are going to write a Python program with Ryu SDN framework to bu
    2) 用SSH指令進入資料夾(For MacOS)  
       `ssh -p 16206 root@140.13.195.69`  
       password:cn2018
-   3) 用clone指令
+   3) 用clone指令進到GitHub裡Lab3的資料庫Route_Configuration  
+      登入GitHub  
+   4) 確認root中有資料夾Route_Configuration
+   5) 測試Mininet  
+      *如果有error `You may wish to try "service openvswitch-switch start".`  
+      就用 `sudo service openvswitch-switch start` 指令來排除錯誤  
+      在測試一次Mininet `sudo mn`
+      
 
 2. Example of Ryu SDN
 
