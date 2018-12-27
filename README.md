@@ -39,8 +39,8 @@ In this lab, we are going to write a Python program with Ryu SDN framework to bu
    4) 確認root中有資料夾Route_Configuration  
       `ls /root/`
    5) 測試Mininet  
-      * 如果有error `You may wish to try "service openvswitch-switch start".`  
-        就用 `sudo service openvswitch-switch start` 指令來排除錯誤  
+      * 如果出現error `You may wish to try "service openvswitch-switch start".`  
+        用指令 `sudo service openvswitch-switch start` 來排除錯誤  
         再測試一次Mininet `sudo mn`
    6) 確認成功後就可以進行第二步   
 
@@ -50,18 +50,27 @@ In this lab, we are going to write a Python program with Ryu SDN framework to bu
       `sudo mn --custom SimpleTopo.py --topo topo --link tc --controller remote`  
       * 如果有錯誤可以試試看 `sudo mn -c`
       * 離開 Mininet CLI `exit`
-      * 離開後要記得清除連線 `mn -c`
+      * 離開後要清除連線 `mn -c`
    3) 開一個新的terminal，進到/root/Route_Configuration/src/  
       用 Ryu manager 跑 SimpleController.py  
       `sudo ryu-manager SimpleController.py --observe-links`  
       * 離開 Mininet CLI 用 Ctrl+z
-      * 離開後要記得清除連線 `mn -c`
+      * 離開後要清除 “RTNETLINK” `mn -c`
 
 3. Mininet Topology
-   1) 透過 Mininet 建 topology  
+   1) 透過 Mininet 建 topology
       * 確認在src資料夾中
       * 複製範例程式 SimpleTopo.py 並命名為 topo.py  
-        `cp SimpleTopo.py topo.py`
+         `cp SimpleTopo.py topo.py`
+      * 在 topo.py 中照著 topo.png 中的敘述，在link之間加入bandwidth, delay 和 loss rate
+         ![topo.png](https://github.com/nctucn/lab3-kuanchiehwu/blob/master/src/topo/topo.png)
+   2) Run Mininet topology and controller
+      * 在第一個terminal中跑 topo.py  
+         `sudo mn --custom topo.py --topo topo --link tc --controller remote`
+      * 開啟另一個terminal跑 SimpleController.py  
+         `sudo ryu-manager SimpleController.py --observe-links`  
+      * 可以在Mininet’s CLI mode中ping每個link  
+         `h1 ping h2` 可以測試h1和h2間的連接
 
 4. Ryu Controller
 
