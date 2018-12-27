@@ -46,7 +46,9 @@ In this lab, we are going to write a Python program with Ryu SDN framework to bu
 2. Example of Ryu SDN
    1) 確認在src資料夾中
    2) 在第一個編譯器測試 SimpleTopo.py  
-      `[sudo] mn --custom SimpleTopo.py --topo topo --link tc --controller remote`
+      `sudo mn --custom SimpleTopo.py --topo topo --link tc --controller remote`  
+      * 如果有錯誤可以試試看 `sudo mn -c`
+   3) 
 
 3. Mininet Topology
 
