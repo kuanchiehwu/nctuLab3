@@ -31,16 +31,17 @@ In this lab, we are going to write a Python program with Ryu SDN framework to bu
 
 1. Environment Setup
    1) 加入GitHub Classroom，拿到Lab2的資料
-   2) 用SSH指令進入資料夾(For MacOS)  
+   2) 用SSH指令進入container中(For MacOS)  
       `ssh -p 16206 root@140.13.195.69`  
       password:cn2018
-   3) 用clone指令進到GitHub裡Lab3的資料庫Route_Configuration  
-      登入GitHub  
-   4) 確認root中有資料夾Route_Configuration
+   3) Clone your GitHub repository to “Route_Configuration”  
+      `git clone https://github.com/nctucn/lab3-0616206.git Route_Configuration`  
+   4) 確認root中有資料夾Route_Configuration  
+      `ls /root/`
    5) 測試Mininet  
       * 如果有error `You may wish to try "service openvswitch-switch start".`  
-      就用 `sudo service openvswitch-switch start` 指令來排除錯誤  
-      在測試一次Mininet `sudo mn`
+        就用 `sudo service openvswitch-switch start` 指令來排除錯誤  
+        再測試一次Mininet `sudo mn`
    6) 確認成功後就可以進行第二步   
 
 2. Example of Ryu SDN
@@ -57,6 +58,10 @@ In this lab, we are going to write a Python program with Ryu SDN framework to bu
       * 離開後要記得清除連線 `mn -c`
 
 3. Mininet Topology
+   1) 透過 Mininet 建 topology  
+      * 確認在src資料夾中
+      * 複製範例程式 SimpleTopo.py 並命名為 topo.py  
+        `cp SimpleTopo.py topo.py`
 
 4. Ryu Controller
 
