@@ -38,12 +38,15 @@ In this lab, we are going to write a Python program with Ryu SDN framework to bu
       登入GitHub  
    4) 確認root中有資料夾Route_Configuration
    5) 測試Mininet  
-      *如果有error `You may wish to try "service openvswitch-switch start".`  
+      * 如果有error `You may wish to try "service openvswitch-switch start".`  
       就用 `sudo service openvswitch-switch start` 指令來排除錯誤  
       在測試一次Mininet `sudo mn`
-      
+   6) 確認成功後就可以進行第二步   
 
 2. Example of Ryu SDN
+   1) 確認在src資料夾中
+   2) 在第一個編譯器測試 SimpleTopo.py  
+      `[sudo] mn --custom SimpleTopo.py --topo topo --link tc --controller remote`
 
 3. Mininet Topology
 
