@@ -45,10 +45,16 @@ In this lab, we are going to write a Python program with Ryu SDN framework to bu
 
 2. Example of Ryu SDN
    1) 確認在src資料夾中
-   2) 在第一個編譯器測試 SimpleTopo.py  
+   2) 在第一個編譯器用 Mininet 跑 SimpleTopo.py  
       `sudo mn --custom SimpleTopo.py --topo topo --link tc --controller remote`  
       * 如果有錯誤可以試試看 `sudo mn -c`
-   3) 
+      * 離開 Mininet CLI `exit`
+      * 離開後要記得清除連線 `mn -c`
+   3) 開一個新的terminal，進到/root/Route_Configuration/src/  
+      用 Ryu manager 跑 SimpleController.py  
+      `sudo ryu-manager SimpleController.py --observe-links`  
+      * 離開 Mininet CLI 用 Ctrl+z
+      * 離開後要記得清除連線 `mn -c`
 
 3. Mininet Topology
 
