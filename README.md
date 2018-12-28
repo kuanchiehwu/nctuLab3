@@ -73,8 +73,39 @@ In this lab, we are going to write a Python program with Ryu SDN framework to bu
          `h1 ping h2` 可以測試h1和h2間的連接
 
 4. Ryu Controller
+   1) 在範例程式 SimpleController.py 中找到 `switch_features_handler(self, ev)`  
+      修改裡面的程式
+   2) 寫另一個 Ryu controller，修改路徑，從原本的s1->s3換走s1->s2->s3(來回都一樣路徑)  
+      * 確認在src資料夾中
+      * 複製範例程式 SimpleController.py 並命名為 controller.py  
+         `cp SimpleController.py controller.py`
+      * 修改 controller.py 中 switch 的傳送規則
 
 5. Measurement
+   1) Run topology with SimpleController.py
+      * 先跑 topo.py  
+         `sudo mn --custom topo.py --topo topo --link tc --controller remote`
+      * 開另一個terminal跑 SimpleController,py  
+         `sudo ryu-manager SimpleController.py --observe-links` 
+   2) Measure the bandwidth  
+      * 用下面的iPerf指令在 Mininet CLI 中來測量bandwidth  
+         `h1 iperf -s -u -i 1 –p 5566 > ./out/result1 &`  
+         `h2 iperf -c 10.0.0.1 -u –i 1 –p 5566`  
+      * 確認結果後截圖，先退出 topo.py 再退出 SimpleController.py  
+      * 確認“RTNETLINK”被清除  
+         `mn -c`
+   3) Run topology with controller.py
+      * 先跑 topo.py  
+         `sudo mn --custom topo.py --topo topo --link tc --controller remote`
+      * 開另一個terminal跑 controller.py  
+         `sudo ryu-manager controller.py --observe-links` 
+   4) Measure the bandwidth
+      * 用下面的iPerf指令在 Mininet CLI 中來測量bandwidth  
+         `h1 iperf -s -u -i 1 –p 5566 > ./out/result2 &`  
+         `h2 iperf -c 10.0.0.1 -u –i 1 –p 5566`
+      * 確認結果後截圖，先退出 topo.py 再退出 controller.py 
+      * 確認“RTNETLINK”被清除  
+         `mn -c`
 
 ### Discussion
 
