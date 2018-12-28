@@ -19,7 +19,11 @@ In this lab, we are going to write a Python program with Ryu SDN framework to bu
 > TODO:
 > * How to run your program?
 > * What is the meaning of the executing command (both Mininet and Ryu controller)?
-> * Show the screenshot of using iPerf command in Mininet (both `SimpleController.py` and `controller.py`)
+> * Show the screenshot of using iPerf command in Mininet (both `SimpleController.py` and `controller.py`)  
+
+1. How to run my program?
+2. The meaning of the executing command
+3. The screenshot
 
 ---
 ## Description
