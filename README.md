@@ -67,7 +67,7 @@ In this lab, we are going to write a Python program with Ryu SDN framework to bu
       * 複製範例程式 SimpleTopo.py 並命名為 topo.py  
          `cp SimpleTopo.py topo.py`
       * 在 topo.py 中照著 topo.png 中的敘述，在link之間加入bandwidth, delay 和 loss rate
-         ![topo.png](https://github.com/nctucn/lab3-kuanchiehwu/blob/master/src/topo/topo.png)
+         ![topo.png](https://github.com/nctucn/lab3-kuanchiehwu/blob/master/new_topo.jpg)
    2) Run Mininet topology and controller
       * 在第一個terminal中跑 topo.py  
          `sudo mn --custom topo.py --topo topo --link tc --controller remote`
