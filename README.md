@@ -156,15 +156,23 @@ In this lab, we are going to write a Python program with Ryu SDN framework to bu
 > TODO:
 > * Answer the following questions
 
-1. Describe the difference between packet-in and packet-out in detail.
+1. Describe the difference between packet-in and packet-out in detail.  
+   A : packet-in -> 對於接收到的封包進行轉送到 controller 的動作  
+   packet-out -> 對於接收到來自 controller 的封包轉送到指定的連接埠  
+   執行一台交換器，先利用 packet-in 的功能達到MAC位址的學習。 controller 使用 packet-in 接收來自switch的封包後進行分析，得到連接埠相關資料以及所連接的 host 之 MAC 位址。  
+   學習之後，對封包進行轉送。將封包的目的位址，在已經學習的 host 資料中進行檢索  
+   -> 如果是已經存在記錄中的host：使用 Packet-Out 功能轉送至先前所對應的連接埠  
+   -> 如果是尚未存在記錄中的host：使用 Packet-Out 功能來達到 Flooding
    
-2. What is “table-miss” in SDN?
+2. What is “table-miss” in SDN?  
+   A : 如果在某個 Flow Table 尋找符合規則的 Flow Entry 時，都找不到相對應的 Flow Entry ，這種情況就稱為 table-miss
    
-3. Why is "`(app_manager.RyuApp)`" adding after the declaration of class in `controller.py`?
+3. Why is "`(app_manager.RyuApp)`" adding after the declaration of class in `controller.py`?  
+   A : 
    
 4. Explain the following code in `controller.py`.
     ```python
-    @set_ev_cls(ofp_event.EventOFPPacketIn, CONFIG_DISPATCHER)
+    @set_ev_cls(ofp_event.EventOFPPacketIn, MAIN_DISPATCHER)
     ```
 
 5. What is the meaning of “datapath” in `controller.py`?
@@ -186,6 +194,7 @@ In this lab, we are going to write a Python program with Ryu SDN framework to bu
     * [Iperf使用說明](http://m1016c.pixnet.net/blog/post/145780230-iperf使用說明)
     * [MiniNet--使用iperf工具測試帶寬](https://blog.csdn.net/Limexc/article/details/82899856)
     * [熟悉如何使用 Mininet(part 1)](https://github.com/OSE-Lab/Learning-SDN/tree/master/Mininet/Walkthrough)
+    * [交換器(Switching Hub)](https://osrg.github.io/ryu-book/zh_tw/html/switching_hub.html)
 * **Ryu SDN**
     * [Ryubook Documentation](https://osrg.github.io/ryu-book/en/html/)
     * [Ryubook [PDF]](https://osrg.github.io/ryu-book/en/Ryubook.pdf)
