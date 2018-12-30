@@ -22,9 +22,14 @@ In this lab, we are going to write a Python program with Ryu SDN framework to bu
 > * Show the screenshot of using iPerf command in Mininet (both `SimpleController.py` and `controller.py`)  
 
 1. How to run my program?
+   1) 
 2. The meaning of the executing command
 3. The screenshot
-
+   * result1 (SimpleController)  
+      ![SimpleController](https://github.com/nctucn/lab3-kuanchiehwu/blob/master/SimpleController%20result.png)
+   * result2 (controller)  
+      ![controller](https://github.com/nctucn/lab3-kuanchiehwu/blob/master/controller%20result.png)
+   
 ---
 ## Description
 
