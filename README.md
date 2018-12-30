@@ -40,7 +40,25 @@ In this lab, we are going to write a Python program with Ryu SDN framework to bu
        * 在 Mininet CLI 中用iperf指令測量bandwidth  
          `h1 iperf -s -u -i 1 –p 5566 > ./out/result2 &`  
          `h2 iperf -c 10.0.0.1 -u –i 1 –p 5566` 
-2. The meaning of the executing command
+2. The meaning of the executing command  
+   * sudo
+      * --custom = CUSTOM
+      * --topo = TOPO
+      * --link = LINK 
+      * tc = TCLink
+      * --controller = CONTROLLER
+      * remote = RemoteController
+      * --observe-links 用於指明topo發現
+   * iperf  
+      * -s 以server模式啟動
+      * -u 使用UDP協議
+      * -i sec 以秒為單位顯示報告間隔
+      * -p 指定服務器端使用的端口或客戶端所連接的端口
+      * -c host以client模式啟動，host是server端地址
+      * `h1 iperf -s -u -i 1 –p 5566 > ./out/result1 &`  
+         // 指定h1為server(-s)，設置端口(-p)，每隔一秒監視結果(-i)，並在後台運行(&)
+      * `h2 iperf -c 10.0.0.1 -u –i 1 –p 5566`  
+         // 指定h2為client(-c)，指定服務器地址與端口(-p)
 3. The screenshot
    * result1 (SimpleController)  
       ![SimpleController](https://github.com/nctucn/lab3-kuanchiehwu/blob/master/SimpleController%20result.png)
@@ -165,6 +183,9 @@ In this lab, we are going to write a Python program with Ryu SDN framework to bu
 
 * **Reference**
     * [OpenFlow 通訊協定 - Ryubook 1.0 說明文件](https://osrg.github.io/ryu-book/zh_tw/html/openflow_protocol.html)
+    * [Iperf使用說明](http://m1016c.pixnet.net/blog/post/145780230-iperf使用說明)
+    * [MiniNet--使用iperf工具測試帶寬](https://blog.csdn.net/Limexc/article/details/82899856)
+    * [熟悉如何使用 Mininet(part 1)](https://github.com/OSE-Lab/Learning-SDN/tree/master/Mininet/Walkthrough)
 * **Ryu SDN**
     * [Ryubook Documentation](https://osrg.github.io/ryu-book/en/html/)
     * [Ryubook [PDF]](https://osrg.github.io/ryu-book/en/Ryubook.pdf)
