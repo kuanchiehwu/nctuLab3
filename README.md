@@ -21,8 +21,25 @@ In this lab, we are going to write a Python program with Ryu SDN framework to bu
 > * What is the meaning of the executing command (both Mininet and Ryu controller)?
 > * Show the screenshot of using iPerf command in Mininet (both `SimpleController.py` and `controller.py`)  
 
-1. How to run my program?
-   1) 
+1. How to run my program?  
+   1) Run topology with SimpleController.py  
+      * 先在一個terminal中跑topo.py  
+         `sudo mn --custom topo.py --topo topo --link tc --controller remote`
+      * 開啟另一個termina跑SimpleController.py  
+         `sudo ryu-manager SimpleController.py –-observe-links`
+   2) Measure the bandwidth
+      * 在 Mininet CLI 中用iperf指令測量bandwidth  
+         `h1 iperf -s -u -i 1 –p 5566 > ./out/result1 &`  
+         `h2 iperf -c 10.0.0.1 -u –i 1 –p 5566`  
+   3) Run topology with controller.py  
+      * 先在一個terminal中跑topo.py  
+         `sudo mn --custom topo.py --topo topo --link tc --controller remote`
+      * 開啟另一個termina跑controller.py  
+         `sudo ryu-manager controller.py –-observe-links`
+   4) Measure the bandwidth  
+       * 在 Mininet CLI 中用iperf指令測量bandwidth  
+         `h1 iperf -s -u -i 1 –p 5566 > ./out/result2 &`  
+         `h2 iperf -c 10.0.0.1 -u –i 1 –p 5566` 
 2. The meaning of the executing command
 3. The screenshot
    * result1 (SimpleController)  
